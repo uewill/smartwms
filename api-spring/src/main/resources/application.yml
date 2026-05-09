@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: smartwms-api
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/smartwms?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+
+jwt:
+  secret: SmartWMS-Secret-Key-2024-This-Is-A-Very-Long-Secret-Key-For-JWT-Signing
+  expiration: 86400000
+
+logging:
+  level:
+    com.smartwms: DEBUG
+    org.hibernate.SQL: DEBUG
